@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title || 'Confort Plus - Voyages pas chers' %>
+    </title>
+    <meta name="description"
+        content="<%= description || 'Confort Plus vous propose des voyages et hébergements de qualité à petits prix.' %>">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="/images/Dream Plane Logo.jpg">
+</head>
+
+<body>
+    <header>
+        <nav class="nav-barre" aria-label="Navigation principale">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="/" aria-label="Accueil Confort Plus">
+                        <img src="/images/logo.png" alt="Logo de Confort Plus" class="logo-image">
+                        <span class="logo-text">Confort<span class="logo-plus">+</span></span>
+                    </a>
+                </div>
+                <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="/" class="nav-link">Accueil</a></li>
+                    <li><a href="/destinations" class="nav-link">Lieux touristiques</a></li>
+                    <li><a href="/reservation" class="nav-link">Réservation</a></li>
+                    <li><a href="/#apropos" class="nav-link">À propos</a></li>
+                    <li><a href="/contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>

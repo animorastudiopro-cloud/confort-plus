@@ -1,0 +1,53 @@
+</main>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Confort Plus</h3>
+            <p>Le confort pas cher pour tous vos voyages</p>
+        </div>
+        <div class="footer-section">
+            <h4>Liens rapides</h4>
+            <ul>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/destinations">Destinations</a></li>
+                <li><a href="/reservation">Réservation</a></li>
+                <li><a href="/#apropos">À propos</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Légal</h4>
+            <ul>
+                <li><a href="#">Mentions légales</a></li>
+                <li><a href="#">Politique de confidentialité</a></li>
+                <li><a href="#">CGV</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Suivez-nous</h4>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook">📘</a>
+                <a href="#" aria-label="Instagram">📷</a>
+                <a href="#" aria-label="Twitter">🐦</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Confort Plus. Tous droits réservés.</p>
+    </div>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        if (menuToggle && navMenu) {
+            menuToggle.addEventListener('click', function () {
+                const expanded = this.getAttribute('aria-expanded') === 'true' ? false : true;
+                this.setAttribute('aria-expanded', expanded);
+                navMenu.classList.toggle('active');
+            });
+        }
+    });
+</script>
+</body>
+
+</html>
