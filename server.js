@@ -24,7 +24,7 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-// ===== ROUTES PAGES =====
+// ===== ROUTES PAGES PRINCIPALES =====
 app.get('/', (req, res) => {
     res.render('index');
 });
@@ -43,6 +43,39 @@ app.get('/reservation', (req, res) => {
 
 app.get('/merci', (req, res) => {
     res.render('merci');
+});
+
+// ===== NOUVELLES ROUTES SERVICES =====
+// Page Tourisme
+app.get('/tourisme', (req, res) => {
+    res.render('tourisme', {
+        title: 'Tourisme - Confort Plus',
+        description: 'Découvrez nos circuits touristiques et visites guidées'
+    });
+});
+
+// Page Événementiel
+app.get('/evenementiel', (req, res) => {
+    res.render('evenementiel', {
+        title: 'Événementiel - Confort Plus',
+        description: 'Organisation de mariages, anniversaires et séminaires'
+    });
+});
+
+// Page Premium
+app.get('/premium', (req, res) => {
+    res.render('premium', {
+        title: 'Premium - Confort Plus',
+        description: 'Services VIP et expériences exclusives'
+    });
+});
+
+// Page Mentions légales (RGPD)
+app.get('/mentions-legales', (req, res) => {
+    res.render('mentions-legales', {
+        title: 'Mentions légales - Confort Plus',
+        description: 'Informations légales et politique de confidentialité'
+    });
 });
 
 // ===== ROUTES FORMULAIRES =====
@@ -165,6 +198,69 @@ app.post('/envoyer-reservation', (req, res) => {
     });
 });
 
+// Formulaire pour les demandes de devis (tourisme, événementiel, premium)
+app.post('/envoyer-devis', (req, res) => {
+    const {
+        service,
+        nom,
+        prenom,
+        email,
+        telephone,
+        date,
+        participants,
+        budget,
+        message
+    } = req.body;
+
+    const mailOptions = {
+        from: process.env.EMAIL,
+        to: process.env.EMAIL,
+        subject: `📋 DEMANDE DE DEVIS - ${service} - ${nom} ${prenom}`,
+        text: `
+╔══════════════════════════════════════════════════════════╗
+║                 DEMANDE DE DEVIS                         ║
+╚══════════════════════════════════════════════════════════╝
+
+🎯 SERVICE DEMANDÉ
+   └─ ${service}
+
+════════════════════════════════════════════════════════════
+
+👤 INFORMATIONS CLIENT
+   ├─ Nom complet : ${nom} ${prenom}
+   ├─ Email       : ${email}
+   └─ Téléphone   : ${telephone}
+
+════════════════════════════════════════════════════════════
+
+📋 DÉTAILS DE LA DEMANDE
+   ├─ Date souhaitée   : ${date || 'Non spécifiée'}
+   ├─ Participants     : ${participants || 'Non spécifié'}
+   ├─ Budget estimé    : ${budget || 'Non spécifié'}
+   └─ Message          : ${message || 'Aucun message'}
+
+════════════════════════════════════════════════════════════
+
+📅 Demande reçue le : ${new Date().toLocaleString('fr-FR')}
+
+---
+🌐 Site : https://confort-plus.onrender.com
+📧 Email client : ${email}
+☎️ Téléphone client : ${telephone}
+        `
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.error('❌ Erreur envoi devis:', error);
+            res.redirect('/404');
+        } else {
+            console.log('✅ Demande de devis envoyée avec succès!');
+            res.redirect('/merci');
+        }
+    });
+});
+
 // ===== PAGE 404 =====
 app.use((req, res) => {
     res.status(404).render('404');
@@ -179,6 +275,16 @@ app.listen(port, () => {
 ║  🌐 http://localhost:${port}                              ║
 ║  📧 Les emails seront envoyés à : ${process.env.EMAIL}    ║
 ║  ✉️  Nodemailer : prêt                                    ║
+╠══════════════════════════════════════════════════════════╣
+║  📄 Pages disponibles :                                  ║
+║     - /               (Accueil)                          ║
+║     - /destinations   (Destinations)                     ║
+║     - /reservation    (Réservation)                      ║
+║     - /contact        (Contact)                          ║
+║     - /tourisme       (Tourisme)                         ║
+║     - /evenementiel   (Événementiel)                     ║
+║     - /premium        (Premium)                          ║
+║     - /mentions-legales (Mentions légales)               ║
 ╚══════════════════════════════════════════════════════════╝
     `);
 });
