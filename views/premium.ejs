@@ -1,0 +1,191 @@
+<%- include('partials/header', { title: 'Premium - Confort Plus' , description: 'Services VIP et expériences exclusives'
+    }) %>
+
+    <!-- Hero section Premium -->
+    <section class="hero"
+        style="min-height: 50vh; background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/premium-hero.jpg'); background-size: cover; background-position: center;">
+        <div class="hero-content">
+            <h1>Service Premium</h1>
+            <p class="hero-slogan">L'excellence à chaque instant</p>
+            <a href="#prestations" class="btn btn-primary">Découvrir nos services</a>
+        </div>
+    </section>
+
+    <!-- Section Présentation -->
+    <section class="about">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>L'art de recevoir en toute élégance</h2>
+                <p>Pour ceux qui recherchent l'excellence, Confort Plus propose une gamme de services premium : accès
+                    VIP, conciergerie 24/7, hébergements de luxe et expériences exclusives dans les plus beaux lieux du
+                    monde.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Services Premium -->
+    <section id="prestations" class="destinations">
+        <div class="section-header">
+            <h2>Nos services Premium</h2>
+            <p class="section-subtitle">Des prestations d'exception pour une expérience unique</p>
+        </div>
+
+        <div class="card-container">
+            <!-- Conciergerie -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="/images/conciergerie.jpg" alt="Conciergerie" loading="lazy">
+                    <span class="card-badge">24/7</span>
+                </div>
+                <div class="card-content">
+                    <h3>🕐 Conciergerie 24/7</h3>
+                    <p class="card-description">Un assistant personnel à votre disposition 24h/24 et 7j/7 pour répondre
+                        à toutes vos demandes : réservations, transferts, recommandations exclusives.</p>
+                    <div class="card-features">
+                        <span>📞 Assistance permanente</span>
+                        <span>🎫 Accès privilégié</span>
+                        <span>🗓️ Planning personnalisé</span>
+                    </div>
+                    <a href="#devis" class="btn btn-secondary">En savoir plus</a>
+                </div>
+            </article>
+
+            <!-- Hébergements Luxe -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="/images/hebergement-luxe.jpg" alt="Hébergement de luxe" loading="lazy">
+                    <span class="card-badge">5 étoiles</span>
+                </div>
+                <div class="card-content">
+                    <h3>🏨 Hébergements d'exception</h3>
+                    <p class="card-description">Sélection des plus beaux palaces, hôtels 5 étoiles et villas de
+                        prestige. Chambres surclassées et attentions personnalisées.</p>
+                    <div class="card-features">
+                        <span>⭐ 5 étoiles & palaces</span>
+                        <span>🏡 Villas privées</span>
+                        <span>🎁 Surclassement offert</span>
+                    </div>
+                    <a href="#devis" class="btn btn-secondary">En savoir plus</a>
+                </div>
+            </article>
+
+            <!-- Expériences Exclusives -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="/images/experience-exclusive.jpg" alt="Expérience exclusive" loading="lazy">
+                    <span class="card-badge">Sur mesure</span>
+                </div>
+                <div class="card-content">
+                    <h3>✨ Expériences exclusives</h3>
+                    <p class="card-description">Accès privés aux lieux emblématiques, rencontres avec des artisans
+                        d'exception, dégustations prestigieuses et activités uniques.</p>
+                    <div class="card-features">
+                        <span>🔑 Accès privés</span>
+                        <span>🎨 Rencontres d'exception</span>
+                        <span>🍾 Dégustations prestige</span>
+                    </div>
+                    <a href="#devis" class="btn btn-secondary">En savoir plus</a>
+                </div>
+            </article>
+
+            <!-- Transferts VIP -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="/images/transfert-vip.jpg" alt="Transfert VIP" loading="lazy">
+                    <span class="card-badge">Premium</span>
+                </div>
+                <div class="card-content">
+                    <h3>🚁 Transferts VIP</h3>
+                    <p class="card-description">Déplacements en limousine, hélicoptère ou jet privé. Accueil
+                        personnalisé à l'aéroport et services de voiturier.</p>
+                    <div class="card-features">
+                        <span>🚗 Limousine</span>
+                        <span>🚁 Hélicoptère</span>
+                        <span>✈️ Jet privé</span>
+                    </div>
+                    <a href="#devis" class="btn btn-secondary">En savoir plus</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Section Avantages -->
+    <section class="about" style="background: linear-gradient(135deg, var(--bg-dark), var(--bg-light));">
+        <div class="about-container">
+            <h2>Pourquoi choisir notre offre Premium ?</h2>
+            <div class="about-stats">
+                <div class="stat">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label">Partenaires d'exception</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Assistance dédiée</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Destinations exclusives</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Devis -->
+    <section id="devis" class="reservation" style="background-color: var(--bg-light);">
+        <div class="reservation-container">
+            <h2>Demandez votre devis Premium</h2>
+            <p>Notre équipe vous recontactera dans les plus brefs délais.</p>
+            <form class="reservation-form" action="/envoyer-devis" method="post">
+                <input type="hidden" name="service" value="Premium">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nom">Nom *</label>
+                        <input type="text" id="nom" name="nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="prenom">Prénom *</label>
+                        <input type="text" id="prenom" name="prenom" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telephone">Téléphone *</label>
+                        <input type="tel" id="telephone" name="telephone" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="prestation">Prestation souhaitée *</label>
+                    <select id="prestation" name="prestation" required>
+                        <option value="">Sélectionnez</option>
+                        <option value="Conciergerie 24/7">Conciergerie 24/7</option>
+                        <option value="Hébergement de luxe">Hébergement de luxe</option>
+                        <option value="Expérience exclusive">Expérience exclusive</option>
+                        <option value="Transfert VIP">Transfert VIP</option>
+                        <option value="Forfait complet">Forfait complet</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Date souhaitée</label>
+                    <input type="date" id="date" name="date">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Votre demande *</label>
+                    <textarea id="message" name="message" rows="4"
+                        placeholder="Décrivez vos attentes, vos envies, vos contraintes..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-large">Demander un devis</button>
+            </form>
+        </div>
+    </section>
+
+    <%- include('partials/footer') %>

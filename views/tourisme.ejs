@@ -1,19 +1,169 @@
-<%- include('partials/header', { title: 'Tourisme - Confort Plus' , description: 'Découvrez nos offres touristiques' })
-    %>
+<%- include('partials/header', { title: 'Tourisme - Confort Plus' ,
+    description: 'Découvrez nos circuits touristiques et visites guidées' }) %>
 
-    <section class="hero" style="min-height: 50vh;">
+    <!-- Hero section Tourisme -->
+    <section class="hero"
+        style="min-height: 50vh; background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/images/tourisme-hero.jpg'); background-size: cover; background-position: center;">
         <div class="hero-content">
             <h1>Tourisme & Découverte</h1>
             <p class="hero-slogan">Explorez les merveilles du monde avec Confort Plus</p>
+            <a href="#offres" class="btn btn-primary">Découvrir nos offres</a>
         </div>
     </section>
 
-    <section class="destinations">
+    <!-- Section Présentation -->
+    <section class="about">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>Voyagez autrement</h2>
+                <p>Confort Plus vous propose des expériences touristiques uniques, guidées par des experts passionnés.
+                    Que vous soyez amateur d'histoire, de nature ou de gastronomie, nos circuits sont conçus pour vous
+                    faire vivre des moments inoubliables.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Circuits touristiques -->
+    <section id="offres" class="destinations">
         <div class="section-header">
             <h2>Nos circuits touristiques</h2>
-            <p class="section-subtitle">Des expériences uniques guidées par des experts</p>
+            <p class="section-subtitle">Des expériences sur mesure pour tous les goûts</p>
         </div>
-        <!-- Ajoute ici le contenu spécifique au tourisme -->
+
+        <div class="card-container">
+            <!-- Circuit Paris -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="/images/paris-circuit.jpg" alt="Circuit Paris" loading="lazy">
+                    <span class="card-badge">À partir de 89€/jour</span>
+                </div>
+                <div class="card-content">
+                    <h3>Paris Authentique</h3>
+                    <p class="card-description">Découvrez Paris hors des sentiers battus : Montmartre, quartier latin,
+                        marchés locaux et petites ruines charmantes.</p>
+                    <div class="card-features">
+                        <span>⏱️ 3 jours</span>
+                        <span>👥 2-8 pers.</span>
+                        <span>🇫🇷 Guide francophone</span>
+                    </div>
+                    <a href="/reservation" class="btn btn-secondary">Réserver</a>
+                </div>
+            </article>
+
+            <!-- Circuit Bordeaux -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="/images/bordeaux-vignobles.jpg" alt="Vignobles de Bordeaux" loading="lazy">
+                    <span class="card-badge">À partir de 129€/jour</span>
+                </div>
+                <div class="card-content">
+                    <h3>Route des Vins</h3>
+                    <p class="card-description">Parcourez les plus beaux vignobles bordelais, dégustations chez des
+                        producteurs locaux et découverte des châteaux.</p>
+                    <div class="card-features">
+                        <span>⏱️ 2 jours</span>
+                        <span>👥 2-6 pers.</span>
+                        <span>🍷 Dégustations incluses</span>
+                    </div>
+                    <a href="/reservation" class="btn btn-secondary">Réserver</a>
+                </div>
+            </article>
+
+            <!-- Circuit Côte d'Azur -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="/images/cote-azur.jpg" alt="Côte d'Azur" loading="lazy">
+                    <span class="card-badge">À partir de 149€/jour</span>
+                </div>
+                <div class="card-content">
+                    <h3>Évasion Méditerranéenne</h3>
+                    <p class="card-description">Nice, Cannes, Monaco et les villages perchés de l'arrière-pays.
+                        Découvrez la dolce vita sur la Côte d'Azur.</p>
+                    <div class="card-features">
+                        <span>⏱️ 4 jours</span>
+                        <span>👥 2-8 pers.</span>
+                        <span>🌊 Mer & Montagne</span>
+                    </div>
+                    <a href="/reservation" class="btn btn-secondary">Réserver</a>
+                </div>
+            </article>
+
+            <!-- Circuit Lyon -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="/images/lyon-gastronomie.jpg" alt="Gastronomie lyonnaise" loading="lazy">
+                    <span class="card-badge">À partir de 79€/jour</span>
+                </div>
+                <div class="card-content">
+                    <h3>Lyon, Capitale de la Gastronomie</h3>
+                    <p class="card-description">Découvrez les bouchons lyonnais, les halles Paul Bocuse et le patrimoine
+                        UNESCO de la ville des Lumières.</p>
+                    <div class="card-features">
+                        <span>⏱️ 2 jours</span>
+                        <span>👥 2-6 pers.</span>
+                        <span>🍽️ Repas inclus</span>
+                    </div>
+                    <a href="/reservation" class="btn btn-secondary">Réserver</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Section Demande de devis -->
+    <section class="reservation" style="background-color: var(--bg-light);">
+        <div class="reservation-container">
+            <h2>Créez votre circuit sur mesure</h2>
+            <p>Vous avez un projet spécifique ? Contactez-nous pour un devis personnalisé.</p>
+            <form class="reservation-form" action="/envoyer-devis" method="post">
+                <input type="hidden" name="service" value="Tourisme">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nom">Nom *</label>
+                        <input type="text" id="nom" name="nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="prenom">Prénom *</label>
+                        <input type="text" id="prenom" name="prenom" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telephone">Téléphone *</label>
+                        <input type="tel" id="telephone" name="telephone" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date">Date souhaitée</label>
+                        <input type="date" id="date" name="date">
+                    </div>
+                    <div class="form-group">
+                        <label for="participants">Nombre de participants</label>
+                        <input type="number" id="participants" name="participants" min="1" value="2">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="budget">Budget estimé (€)</label>
+                    <input type="number" id="budget" name="budget" placeholder="Ex: 1500">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Votre projet / Demande particulière</label>
+                    <textarea id="message" name="message" rows="4"
+                        placeholder="Décrivez le circuit que vous souhaitez..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-large">Demander un devis</button>
+            </form>
+        </div>
     </section>
 
     <%- include('partials/footer') %>

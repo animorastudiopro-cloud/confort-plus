@@ -1,19 +1,181 @@
-<%- include('partials/header', { title: 'Événementiel - Confort Plus' , description: 'Organisation d\' événements sur
-    mesure' }) %>
+<%- include('partials/header', { title: 'Événementiel - Confort Plus' ,
+    description: 'Organisation de mariages, anniversaires et séminaires' }) %>
 
-    <section class="hero" style="min-height: 50vh;">
+    <!-- Hero section Événementiel -->
+    <section class="hero"
+        style="min-height: 50vh; background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/images/evenementiel-hero.jpg'); background-size: cover; background-position: center;">
         <div class="hero-content">
             <h1>Événementiel & Réceptions</h1>
             <p class="hero-slogan">Des moments inoubliables organisés par des professionnels</p>
+            <a href="#prestations" class="btn btn-primary">Découvrir nos prestations</a>
         </div>
     </section>
 
-    <section class="destinations">
-        <div class="section-header">
-            <h2>Nos prestations événementielles</h2>
-            <p class="section-subtitle">Mariages, anniversaires, séminaires et plus encore</p>
+    <!-- Section Présentation -->
+    <section class="about">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>L'art de célébrer</h2>
+                <p>Que ce soit pour un mariage, un anniversaire, un séminaire ou une soirée privée, Confort Plus met son
+                    expertise à votre service pour créer des événements sur mesure, dans des lieux d'exception.</p>
+            </div>
         </div>
-        <!-- Ajoute ici le contenu spécifique à l'événementiel -->
+    </section>
+
+    <!-- Section Prestations -->
+    <section id="prestations" class="destinations">
+        <div class="section-header">
+            <h2>Nos prestations</h2>
+            <p class="section-subtitle">Des services clé en main pour tous vos événements</p>
+        </div>
+
+        <div class="card-container">
+            <!-- Mariages -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="/images/mariage.jpg" alt="Mariage" loading="lazy">
+                    <span class="card-badge">Sur devis</span>
+                </div>
+                <div class="card-content">
+                    <h3>💍 Mariages</h3>
+                    <p class="card-description">Organisation complète de votre mariage : recherche du lieu, traiteur,
+                        fleuriste, photographe, animation et coordination sur mesure.</p>
+                    <div class="card-features">
+                        <span>🎯 Sur mesure</span>
+                        <span>📋 Clé en main</span>
+                        <span>💑 Jusqu'à 200 pers.</span>
+                    </div>
+                    <a href="#devis" class="btn btn-secondary">Demander un devis</a>
+                </div>
+            </article>
+
+            <!-- Anniversaires -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="/images/anniversaire.jpg" alt="Anniversaire" loading="lazy">
+                    <span class="card-badge">À partir de 500€</span>
+                </div>
+                <div class="card-content">
+                    <h3>🎂 Anniversaires & Fêtes</h3>
+                    <p class="card-description">Célébrez vos anniversaires, baptêmes ou fêtes de famille dans des lieux
+                        uniques avec une organisation personnalisée.</p>
+                    <div class="card-features">
+                        <span>🎈 Personnalisable</span>
+                        <span>🎵 Animation</span>
+                        <span>🍾 Traiteur inclus</span>
+                    </div>
+                    <a href="#devis" class="btn btn-secondary">Demander un devis</a>
+                </div>
+            </article>
+
+            <!-- Séminaires -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="/images/seminaire.jpg" alt="Séminaire" loading="lazy">
+                    <span class="card-badge">Sur devis</span>
+                </div>
+                <div class="card-content">
+                    <h3>💼 Séminaires & Team Building</h3>
+                    <p class="card-description">Organisation de séminaires professionnels, journées de cohésion et
+                        événements d'entreprise dans des lieux inspirants.</p>
+                    <div class="card-features">
+                        <span>🏢 Entreprises</span>
+                        <span>🤝 Team building</span>
+                        <span>📊 Salles équipées</span>
+                    </div>
+                    <a href="#devis" class="btn btn-secondary">Demander un devis</a>
+                </div>
+            </article>
+
+            <!-- Soirées Privées -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="/images/soiree-privee.jpg" alt="Soirée privée" loading="lazy">
+                    <span class="card-badge">À partir de 800€</span>
+                </div>
+                <div class="card-content">
+                    <h3>🎉 Soirées Privées</h3>
+                    <p class="card-description">Organisation de soirées privées : cocktails, dîners gastronomiques,
+                        événements VIP dans les plus beaux lieux.</p>
+                    <div class="card-features">
+                        <span>🥂 Cocktails</span>
+                        <span>🎶 DJ & Ambiance</span>
+                        <span>✨ Lieux d'exception</span>
+                    </div>
+                    <a href="#devis" class="btn btn-secondary">Demander un devis</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Section Devis -->
+    <section id="devis" class="reservation" style="background-color: var(--bg-light);">
+        <div class="reservation-container">
+            <h2>Demandez un devis personnalisé</h2>
+            <p>Racontez-nous votre projet, nous vous répondrons sous 24h.</p>
+            <form class="reservation-form" action="/envoyer-devis" method="post">
+                <input type="hidden" name="service" value="Événementiel">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nom">Nom *</label>
+                        <input type="text" id="nom" name="nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="prenom">Prénom *</label>
+                        <input type="text" id="prenom" name="prenom" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telephone">Téléphone *</label>
+                        <input type="tel" id="telephone" name="telephone" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="type-evenement">Type d'événement *</label>
+                    <select id="type-evenement" name="typeEvenement" required>
+                        <option value="">Sélectionnez</option>
+                        <option value="Mariage">Mariage</option>
+                        <option value="Anniversaire">Anniversaire</option>
+                        <option value="Séminaire">Séminaire</option>
+                        <option value="Soirée privée">Soirée privée</option>
+                        <option value="Autre">Autre</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date">Date souhaitée</label>
+                        <input type="date" id="date" name="date">
+                    </div>
+                    <div class="form-group">
+                        <label for="participants">Nombre de participants</label>
+                        <input type="number" id="participants" name="participants" min="1">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="budget">Budget estimé (€)</label>
+                    <input type="number" id="budget" name="budget" placeholder="Ex: 5000">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Description de votre projet *</label>
+                    <textarea id="message" name="message" rows="4"
+                        placeholder="Décrivez votre événement : type, style, lieux souhaités, contraintes particulières..."
+                        required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-large">Envoyer ma demande</button>
+            </form>
+        </div>
     </section>
 
     <%- include('partials/footer') %>
