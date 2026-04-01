@@ -1,37 +1,162 @@
-﻿<%- include('partials/header', { title: 'Réservation - Confort Plus', description: 'Réservez votre voyage en quelques clics' }) %>
+﻿<%- include('partials/header', { title: 'Réservation - Confort Plus' ,
+    description: 'Réservez votre voyage en quelques clics' }) %>
 
-<section class="reservation">
-    <div class="reservation-container">
-        <h2>Prêt à partir ?</h2>
-        <p>Réservez votre séjour en quelques clics</p>
-        <form class="reservation-form" action="/envoyer-reservation" method="post">
-            <div class="form-group">
-                <label for="destination">Destination</label>
-                <select id="destination" name="destination" required>
-                    <option value="">Choisissez une destination</option>
-                    <option value="Paris">Paris</option>
-                    <option value="Lyon">Lyon</option>
-                    <option value="Marseille">Marseille</option>
-                    <option value="Bordeaux">Bordeaux</option>
-                </select>
-            </div>
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="date-depart">Date de départ</label>
-                    <input type="date" id="date-depart" name="dateDepart" required>
-                </div>
-                <div class="form-group">
-                    <label for="date-retour">Date de retour</label>
-                    <input type="date" id="date-retour" name="dateRetour" required>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="voyageurs">Nombre de voyageurs</label>
-                <input type="number" id="voyageurs" name="voyageurs" min="1" max="10" value="2" required>
-            </div>
-            <button type="submit" class="btn btn-primary btn-large">Rechercher</button>
-        </form>
-    </div>
-</section>
+    <section class="reservation">
+        <div class="reservation-container">
+            <h2>Prêt à partir ?</h2>
+            <p>Réservez votre séjour en quelques clics</p>
 
-<%- include('partials/footer') %>
+            <form class="reservation-form" action="/envoyer-reservation" method="post">
+
+                <!-- ===== 1. DESTINATION ET DATES ===== -->
+                <div class="form-group">
+                    <label for="destination">Destination *</label>
+                    <select id="destination" name="destination" required>
+                        <option value="">Choisissez une destination</option>
+                        <option value="Paris">Paris - À partir de 299€</option>
+                        <option value="Lyon">Lyon - À partir de 199€</option>
+                        <option value="Marseille">Marseille - À partir de 249€</option>
+                        <option value="Bordeaux">Bordeaux - À partir de 279€</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date-depart">Date de départ *</label>
+                        <input type="date" id="date-depart" name="dateDepart" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date-retour">Date de retour *</label>
+                        <input type="date" id="date-retour" name="dateRetour" required>
+                    </div>
+                </div>
+
+                <!-- ===== 2. INFORMATIONS PERSONNELLES ===== -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nom">Nom *</label>
+                        <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="prenom">Prénom *</label>
+                        <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" placeholder="exemple@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telephone">Téléphone *</label>
+                        <input type="tel" id="telephone" name="telephone" placeholder="+33 6 12 34 56 78" required>
+                    </div>
+                </div>
+
+                <!-- ===== 3. DÉTAILS DU VOYAGE ===== -->
+                <div class="form-group">
+                    <label for="voyageurs">Nombre de voyageurs *</label>
+                    <input type="number" id="voyageurs" name="voyageurs" min="1" max="10" value="2" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="chambres">Nombre de chambres</label>
+                        <select id="chambres" name="chambres">
+                            <option value="1">1 chambre</option>
+                            <option value="2">2 chambres</option>
+                            <option value="3">3 chambres</option>
+                            <option value="4+">4+ chambres</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="type-chambre">Type de chambre</label>
+                        <select id="type-chambre" name="typeChambre">
+                            <option value="standard">Standard</option>
+                            <option value="confort">Confort</option>
+                            <option value="premium">Premium</option>
+                            <option value="familiale">Familiale</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="options">Options supplémentaires</label>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <label style="display: flex; align-items: center; gap: 0.5rem;">
+                            <input type="checkbox" name="options" value="petit-dejeuner"> Petit-déjeuner
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem;">
+                            <input type="checkbox" name="options" value="demi-pension"> Demi-pension
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem;">
+                            <input type="checkbox" name="options" value="transfert"> Transfert aéroport
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem;">
+                            <input type="checkbox" name="options" value="assurance"> Assurance annulation
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message ou demande particulière</label>
+                    <textarea id="message" name="message" rows="4"
+                        placeholder="Besoin spécifique, régime alimentaire, demande particulière..."></textarea>
+                </div>
+
+                <!-- ===== 4. PRIX ESTIMÉ ===== -->
+                <div class="form-group"
+                    style="background: rgba(0, 240, 255, 0.1); padding: 1rem; border-radius: 10px; text-align: center;">
+                    <p style="margin-bottom: 0;">
+                        📊 <strong>Prix estimé à partir de :</strong>
+                        <span id="prix-estime" style="color: #6aa710; font-size: 1.2rem;">0€</span>
+                    </p>
+                    <small>Calcul basé sur la destination et le nombre de voyageurs</small>
+                </div>
+
+                <!-- ===== 5. RGPD ET VALIDATION ===== -->
+                <div class="form-group">
+                    <label style="display: flex; align-items: center; gap: 0.5rem;">
+                        <input type="checkbox" id="rgpd" name="rgpd" required>
+                        J'accepte la <a href="/mentions-legales" target="_blank">politique de confidentialité</a> et que
+                        mes données soient utilisées pour traiter ma réservation *
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-large">Envoyer ma demande</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Script pour le calcul du prix estimé -->
+    <script>
+        const prixParDestination = {
+            'Paris': 299,
+            'Lyon': 199,
+            'Marseille': 249,
+            'Bordeaux': 279
+        };
+
+        const destinationSelect = document.getElementById('destination');
+        const voyageursInput = document.getElementById('voyageurs');
+        const prixEstimeSpan = document.getElementById('prix-estime');
+
+        function calculerPrix() {
+            const destination = destinationSelect.value;
+            const voyageurs = parseInt(voyageursInput.value) || 1;
+
+            if (destination && prixParDestination[destination]) {
+                const prixTotal = prixParDestination[destination] * voyageurs;
+                prixEstimeSpan.textContent = prixTotal + '€';
+            } else {
+                prixEstimeSpan.textContent = '0€';
+            }
+        }
+
+        destinationSelect.addEventListener('change', calculerPrix);
+        voyageursInput.addEventListener('input', calculerPrix);
+        calculerPrix();
+    </script>
+
+    <%- include('partials/footer') %>

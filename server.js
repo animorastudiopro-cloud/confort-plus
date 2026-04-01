@@ -74,28 +74,92 @@ ${message}
     });
 });
 
-// Formulaire de réservation
+// Formulaire de réservation COMPLET
 app.post('/envoyer-reservation', (req, res) => {
-    const { destination, dateDepart, dateRetour, voyageurs } = req.body;
+    const {
+        destination,
+        dateDepart,
+        dateRetour,
+        nom,
+        prenom,
+        email,
+        telephone,
+        voyageurs,
+        chambres,
+        typeChambre,
+        options,
+        message,
+        rgpd
+    } = req.body;
+
+    // Formatage des options (si plusieurs cases cochées, elles arrivent sous forme de tableau)
+    let optionsTexte = options;
+    if (Array.isArray(options)) {
+        optionsTexte = options.join(', ');
+    } else if (!options) {
+        optionsTexte = 'Aucune option';
+    }
 
     const mailOptions = {
         from: process.env.EMAIL,
         to: process.env.EMAIL,
-        subject: '🏝️ Nouvelle demande de réservation',
+        subject: `🏝️ NOUVELLE RÉSERVATION - ${destination} - ${nom} ${prenom}`,
         text: `
-📍 DESTINATION: ${destination}
-📅 DÉPART: ${dateDepart}
-📅 RETOUR: ${dateRetour}
-👥 VOYAGEURS: ${voyageurs}
+╔══════════════════════════════════════════════════════════╗
+║                 NOUVELLE DEMANDE DE RÉSERVATION          ║
+╚══════════════════════════════════════════════════════════╝
+
+📍 DESTINATION
+   └─ ${destination}
+
+📅 DATES
+   ├─ Départ : ${dateDepart}
+   └─ Retour  : ${dateRetour}
+
+════════════════════════════════════════════════════════════
+
+👤 INFORMATIONS CLIENT
+   ├─ Nom complet : ${nom} ${prenom}
+   ├─ Email       : ${email}
+   └─ Téléphone   : ${telephone}
+
+════════════════════════════════════════════════════════════
+
+👥 DÉTAILS DU VOYAGE
+   ├─ Voyageurs      : ${voyageurs}
+   ├─ Chambres       : ${chambres || 'Non spécifié'}
+   └─ Type de chambre: ${typeChambre || 'Standard'}
+
+════════════════════════════════════════════════════════════
+
+🍽️ OPTIONS SUPPLÉMENTAIRES
+   └─ ${optionsTexte}
+
+════════════════════════════════════════════════════════════
+
+💬 MESSAGE / DEMANDE SPÉCIALE
+   └─ ${message || 'Aucune demande particulière'}
+
+════════════════════════════════════════════════════════════
+✅ RGPD accepté : ${rgpd ? 'OUI' : 'NON (⚠️ Attention)'}
+📅 Demande reçue le : ${new Date().toLocaleString('fr-FR')}
+
+---
+🌐 Site : https://confort-plus.onrender.com
+📧 Email client : ${email}
+☎️ Téléphone client : ${telephone}
         `
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             console.error('❌ Erreur envoi réservation:', error);
+            console.error('Détails de l\'erreur:', error.message);
             res.redirect('/404');
         } else {
-            console.log('✅ Réservation envoyée:', info.response);
+            console.log('✅ Réservation envoyée avec succès!');
+            console.log(`📧 Destinataire: ${process.env.EMAIL}`);
+            console.log(`🏝️ Destination: ${destination} - ${voyageurs} voyageur(s)`);
             res.redirect('/merci');
         }
     });
@@ -109,8 +173,12 @@ app.use((req, res) => {
 // ===== DÉMARRAGE DU SERVEUR =====
 app.listen(port, () => {
     console.log(`
-🚀 Serveur Confort Plus démarré !
-🌐 http://localhost:${port}
-📧 Les emails seront envoyés à : ${process.env.EMAIL}
+╔══════════════════════════════════════════════════════════╗
+║         🚀 SERVEUR CONFORT PLUS DÉMARRÉ !                ║
+╠══════════════════════════════════════════════════════════╣
+║  🌐 http://localhost:${port}                              ║
+║  📧 Les emails seront envoyés à : ${process.env.EMAIL}    ║
+║  ✉️  Nodemailer : prêt                                    ║
+╚══════════════════════════════════════════════════════════╝
     `);
 });
