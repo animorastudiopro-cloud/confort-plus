@@ -1,16 +1,22 @@
 <%- include('partials/header', { title: 'Accueil - Confort Plus' ,
     description: 'Réservez vos voyages pas chers avec Confort Plus' }) %>
 
-    <!-- ===== SECTION HERO ===== -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Bienvenue sur Confort Plus</h1>
-            <p class="hero-slogan">Le confort pas cher, pour des moments inoubliables</p>
-            <a href="/reservation" class="btn btn-primary" aria-label="Réserver maintenant">
-                Réserver maintenant
-            </a>
-        </div>
-    </section>
+        <!-- ===== SECTION HERO AVEC VIDÉO ===== -->
+        <section class="hero-video">
+            <video class="hero-video__background" autoplay muted loop playsinline>
+                <source src="/video/hero.mp4" type="video/mp4">
+                <!-- Fallback image si la vidéo ne charge pas -->
+                <img src="/images/hero-fallback.jpg" alt="Voyage">
+            </video>
+            <div class="hero-video__overlay"></div>
+            <div class="hero-video__content">
+                <h1>Bienvenue sur Confort Plus</h1>
+                <p class="hero-slogan">Le confort pas cher, pour des moments inoubliables</p>
+                <a href="/reservation" class="btn btn-primary" aria-label="Réserver maintenant">
+                    Réserver maintenant
+                </a>
+            </div>
+        </section>
 
     <!-- ===== SECTION DESTINATIONS ===== -->
     <section id="lieux" class="destinations">
