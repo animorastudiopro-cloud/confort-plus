@@ -977,7 +977,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     .hero-video {
         min-height: 500px;
     }
-
+    
     .hero-video__content {
         padding: 2rem;
         margin: 0 1rem;
@@ -988,7 +988,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     .hero-video {
         min-height: 400px;
     }
-
+    
     .hero-video__content {
         padding: 1.5rem;
     }
