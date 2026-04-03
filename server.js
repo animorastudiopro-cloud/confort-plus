@@ -78,6 +78,11 @@ app.get('/mentions-legales', (req, res) => {
     });
 });
 
+// Page À propos
+app.get('/apropos', (req, res) => {
+    res.render('apropos');
+});
+
 // ===== ROUTES FORMULAIRES =====
 
 // Formulaire de contact
