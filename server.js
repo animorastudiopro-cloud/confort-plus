@@ -112,6 +112,23 @@ ${message}
     });
 });
 
+// Nouvelles pages
+app.get('/voyages', (req, res) => {
+    res.render('voyages');
+});
+
+app.get('/international', (req, res) => {
+    res.render('international');
+});
+
+app.get('/devis', (req, res) => {
+    res.render('devis');
+});
+
+app.get('/assistance', (req, res) => {
+    res.render('assistance');
+});
+
 // Formulaire de réservation COMPLET
 app.post('/envoyer-reservation', (req, res) => {
     const {

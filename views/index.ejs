@@ -1,160 +1,388 @@
 <%- include('partials/header', { title: 'Accueil - Confort Plus' ,
-    description: 'Réservez vos voyages pas chers avec Confort Plus' }) %>
+    description: 'Voyages, tourisme et événementiel en Côte d\' Ivoire et dans le monde' }) %>
 
-        <!-- ===== SECTION HERO AVEC VIDÉO ===== -->
-        <section class="hero-video">
-            <video class="hero-video__background" autoplay muted loop playsinline>
-                <source src="/video/hero.mp4" type="video/mp4">
-                <!-- Fallback image si la vidéo ne charge pas -->
-                <img src="/images/hero-fallback.jpg" alt="Voyage">
-            </video>
-            <div class="hero-video__overlay"></div>
-            <div class="hero-video__content">
-                <h1>Bienvenue sur Confort Plus</h1>
-                <p class="hero-slogan">Le confort pas cher, pour des moments inoubliables</p>
-                <a href="/reservation" class="btn btn-primary" aria-label="Réserver maintenant">
-                    Réserver maintenant
-                </a>
+    <!-- ===== SECTION HERO ===== -->
+    <!-- ===== SECTION HERO CARROUSEL ===== -->
+    <section class="hero-carousel">
+        <!-- Images du carrousel -->
+        <div class="carousel-slides">
+            <div class="carousel-slide active"
+                style="background-image: linear-gradient(rgba(1, 13, 31, 0.4), rgba(1, 13, 31, 0.4)), url('/images/Basilique3.jpg');">
             </div>
-        </section>
+            <div class="carousel-slide"
+                style="background-image: linear-gradient(rgba(1, 13, 31, 0.4), rgba(1, 13, 31, 0.4)), url('/images/baselique1.jpg');">
+            </div>
+            <div class="carousel-slide"
+                style="background-image: linear-gradient(rgba(1, 13, 31, 0.4), rgba(1, 13, 31, 0.4)), url('/images/rond.jpg');">
+            </div>
+            <div class="carousel-slide"
+                style="background-image: linear-gradient(rgba(1, 13, 31, 0.4), rgba(1, 13, 31, 0.4)), url('/images/cathedrale2.jpg');">
+            </div>
+        </div>
+    
+        <!-- Contenu du hero -->
+        <div class="hero-carousel__content">
+            <h1>Bienvenue sur Confort Plus</h1>
+            <p class="hero-slogan">Le confort pas cher, pour des moments inoubliables</p>
+            <p class="hero-slogan" style="font-size: 1rem; margin-top: 1rem;"><i class="fa-solid fa-earth-africa"></i> Présent en Côte d'Ivoire, France, Canada et
+                Chine</p>
+            <a href="/reservation" class="btn btn-primary">Réserver maintenant</a>
+        </div>
+    
+        <!-- Boutons de navigation -->
+        <button class="carousel-btn prev" aria-label="Image précédente">❮</button>
+        <button class="carousel-btn next" aria-label="Image suivante">❯</button>
+    
+        <!-- Indicateurs (dots) -->
+        <div class="carousel-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </section>
 
-    <!-- ===== SECTION DESTINATIONS ===== -->
-    <section id="lieux" class="destinations">
+    <!-- ===== SECTION PRÉSENCE INTERNATIONALE ===== -->
+    <section class="about" style="padding: 2rem 1rem;">
+        <div class="about-container">
+            <p style="text-align: center; font-size: 1.1rem;">
+                <strong><i class="fa-solid fa-hands-helping"></i> Nous prenons soin de vous de votre départ à votre retour</strong><br>
+                Présent en Côte d'Ivoire, France, Canada et Chine, nous organisons votre voyage clé en main.
+            </p>
+            <div class="about-stats" style="margin-top: 1rem;">
+                <div class="stat"><span class="stat-number">🇨🇮</span><span class="stat-label">Côte d'Ivoire</span>
+                </div>
+                <div class="stat"><span class="stat-number">🇫🇷</span><span class="stat-label">France</span></div>
+                <div class="stat"><span class="stat-number">🇨🇦</span><span class="stat-label">Canada</span></div>
+                <div class="stat"><span class="stat-number">🇨🇳</span><span class="stat-label">Chine</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION SERVICES (3 SECTEURS) ===== -->
+    <section id="services" class="services">
         <div class="section-header">
-            <h2>Nos destinations populaires</h2>
-            <p class="section-subtitle">Découvrez nos meilleures offres pour des voyages inoubliables</p>
+            <h2>Nos services</h2>
+            <p class="section-subtitle">Trois secteurs d'excellence pour répondre à tous vos besoins</p>
+        </div>
+
+        <div class="services-container">
+            <!-- Service Voyages -->
+            <article class="service-card" onclick="location.href='/voyages'">
+                <div class="service-icon"><i class="fa-solid fa-plane"></i></div>
+                <h3>Voyages & Séjours</h3>
+                <p class="service-description">
+                    Séjours clé en main pour les visiteurs venant de l'étranger. De l'accueil à l'aéroport jusqu'à votre
+                    retour, nous gérons tout.
+                </p>
+                <div class="service-features">
+                    <span><i class="fa-solid fa-earth-africa"></i> Vols internationaux</span>
+                    <span><i class="fa-solid fa-hotel"></i> Hébergements</span>
+                    <span><i class="fa-solid fa-shield-alt"></i> Assistance 24/7</span>
+                </div>
+                <a href="/voyages" class="btn btn-secondary">Découvrir</a>
+            </article>
+
+            <!-- Service Tourisme -->
+            <article class="service-card" onclick="location.href='/tourisme'">
+                <div class="service-icon"><i class="fa-solid fa-landmark"></i></div>
+                <h3>Tourisme & Découverte</h3>
+                <p class="service-description">
+                    Explorez les merveilles de la Côte d'Ivoire et de l'Afrique. Circuits, excursions et visites
+                    guidées.
+                </p>
+                <div class="service-features">
+                    <span><i class="fa-solid fa-map-marker-alt"></i> Visites guidées</span>
+                    <span><i class="fa-solid fa-map"></i>  Circuits personnalisés</span>
+                    <span><i class="fa-solid fa-camera"></i>  Photos souvenirs</span>
+                </div>
+                <a href="/tourisme" class="btn btn-secondary">Découvrir</a>
+            </article>
+
+            <!-- Service Événementiel -->
+            <article class="service-card" onclick="location.href='/evenementiel'">
+                <div class="service-icon"><i class="fa-solid fa-martini-glass-citrus"></i></div>
+                <h3>Événementiel & Réceptions</h3>
+                <p class="service-description">
+                    Organisation de mariages, anniversaires, séminaires et soirées privées. Un service clé en main.
+                </p>
+                <div class="service-features">
+                    <span><i class="fa-solid fa-ring"></i> Mariages</span>
+                    <span><i class="fa-solid fa-birthday-cake"></i> Anniversaires</span>
+                    <span><i class="fa-solid fa-users"></i> Séminaires</span>
+                </div>
+                <a href="/evenementiel" class="btn btn-secondary">Découvrir</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- ===== SECTION PACKAGES VOYAGES ===== -->
+    <section class="destinations">
+        <div class="section-header">
+            <h2>Nos packages voyages</h2>
+            <p class="section-subtitle">Des séjours clé en main pour découvrir la Côte d'Ivoire</p>
         </div>
 
         <div class="card-container">
-            <!-- Paris -->
             <article class="card">
                 <div class="card-image">
-                    <img src="/images/tour eifel.jpg" alt="Tour Eiffel à Paris" loading="lazy">
-                    <span class="card-badge">À partir de 20.000F CFA/jour</span>
+                    <img src="/images/assinie.jpg" alt="Assinie" loading="lazy">
+                    <span class="card-badge">À partir de 249€</span>
                 </div>
                 <div class="card-content">
-                    <h3>Paris</h3>
-                    <p class="card-description">Pour un voyage en amoureux, vivez des moments magiques dans la ville
-                        lumière.</p>
+                    <h3>Package Découverte</h3>
+                    <p class="card-description">5 jours / 4 nuits - Vol inclus, accueil aéroport, hôtel 4*, excursions,
+                        assistance 24/7</p>
                     <div class="card-features">
-                        <span class="feature">⭐ 4.8/5</span>
-                        <span class="feature">🏨 120 avis</span>
+                        <span><i class="fa-solid fa-plane"></i> Vol inclus</span>
+                        <span><i class="fa-solid fa-hotel"></i> Hôtel 4*</span>
+                        <span><i class="fa-solid fa-shield-alt"></i> Assistance</span>
                     </div>
-                    <a href="#" class="btn btn-secondary">En savoir plus</a>
+                    <a href="/voyages" class="btn btn-secondary">Réserver</a>
                 </div>
             </article>
 
-            <!-- Lyon -->
             <article class="card">
                 <div class="card-image">
-                    <img src="/images/LYON - En images.jpg" alt="Vue panoramique de Lyon" loading="lazy">
-                    <span class="card-badge">À partir de 50.000F CFA/jour</span>
+                    <img src="/images/san-pedro.jpg" alt="San Pedro" loading="lazy">
+                    <span class="card-badge">À partir de 399€</span>
                 </div>
                 <div class="card-content">
-                    <h3>Lyon</h3>
-                    <p class="card-description">Capitale de la gastronomie, Lyon vous séduira par son patrimoine unique.
-                    </p>
+                    <h3>Package Aventure</h3>
+                    <p class="card-description">7 jours / 6 nuits - Vol + hôtel 5* + excursions + transferts privés +
+                        guide</p>
                     <div class="card-features">
-                        <span class="feature">⭐ 4.6/5</span>
-                        <span class="feature">🏨 95 avis</span>
+                        <span><i class="fa-solid fa-hotel"></i> Hôtel 5*</span>
+                        <span><i class="fa-solid fa-car"></i> Transferts VIP</span>
+                        <span><i class="fa-solid fa-map"></i> Guide inclus</span>
                     </div>
-                    <a href="#" class="btn btn-secondary">En savoir plus</a>
+                    <a href="/voyages" class="btn btn-secondary">Réserver</a>
                 </div>
             </article>
 
-            <!-- Marseille -->
             <article class="card">
                 <div class="card-image">
-                    <img src="/images/Vieux-Port de Marseille, France.jpg" alt="Vieux-Port de Marseille" loading="lazy">
-                    <span class="card-badge">À partir de 30.000F CFA/jour</span>
+                    <img src="/images/yamousssoukro.jpg" alt="Yamoussoukro" loading="lazy">
+                    <span class="card-badge">Sur devis</span>
                 </div>
                 <div class="card-content">
-                    <h3>Marseille</h3>
-                    <p class="card-description">Entre mer et collines, découvrez la cité phocéenne et ses calanques.</p>
+                    <h3>Package Sur Mesure</h3>
+                    <p class="card-description">Créez votre propre itinéraire selon vos envies. Nous nous occupons de
+                        tout.</p>
                     <div class="card-features">
-                        <span class="feature">⭐ 4.7/5</span>
-                        <span class="feature">🏨 156 avis</span>
+                        <span><i class="fa-solid fa-target"></i> Personnalisé</span>
+                        <span><i class="fa-solid fa-list-check"></i> Clé en main</span>
+                        <span><i class="fa-solid fa-comment-dots"></i> Devis gratuit</span>
                     </div>
-                    <a href="#" class="btn btn-secondary">En savoir plus</a>
-                </div>
-            </article>
-
-            <!-- Bordeaux -->
-            <article class="card">
-                <div class="card-image">
-                    <img src="/images/Place de la bourse.jpg" alt="Place de la Bourse à Bordeaux" loading="lazy">
-                    <span class="card-badge">À partir de 40.000F CFA/jour</span>
-                </div>
-                <div class="card-content">
-                    <h3>Bordeaux</h3>
-                    <p class="card-description">Capitale du vin, Bordeaux vous invite à découvrir son architecture
-                        majestueuse.</p>
-                    <div class="card-features">
-                        <span class="feature">⭐ 4.9/5</span>
-                        <span class="feature">🏨 203 avis</span>
-                    </div>
-                    <a href="#" class="btn btn-secondary">En savoir plus</a>
+                    <a href="/devis" class="btn btn-secondary">Demander un devis</a>
                 </div>
             </article>
         </div>
     </section>
 
-        <!-- ===== SECTION SERVICES ===== -->
-        <section class="services">
-            <div class="section-header">
-                <h2>Nos services</h2>
-                <p class="section-subtitle">Des prestations sur mesure pour tous vos besoins</p>
+    <!-- ===== SECTION DESTINATIONS POPULAIRES ===== -->
+    <section class="destinations" style="background-color: var(--bg-light);">
+        <div class="section-header">
+            <h2>Destinations populaires</h2>
+            <p class="section-subtitle">Les lieux incontournables de la Côte d'Ivoire</p>
+        </div>
+
+        <div class="card-container">
+            <article class="card">
+                <div class="card-image">
+                    <img src="/images/assinie.jpg" alt="Assinie" loading="lazy">
+                    <span class="card-badge">À partir de 249€</span>
+                </div>
+                <div class="card-content">
+                    <h3>Assinie</h3>
+                    <p class="card-description">La perle balnéaire de la Côte d'Ivoire. Plages paradisiaques, lagune
+                        paisible et ambiance chic.</p>
+                    <div class="card-features">
+                        <span><i class="fa-solid fa-star"></i> 4.8/5</span>
+                        <span><i class="fa-solid fa-hotel"></i> 89 avis</span>
+                    </div>
+                    <a href="/reservation" class="btn btn-secondary">Réserver</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-image">
+                    <img src="/images/côté d'Ivoire ♥️.jpg.jpeg" alt="Yamoussoukro" loading="lazy">
+                    <span class="card-badge">À partir de 189€</span>
+                </div>
+                <div class="card-content">
+                    <h3>Yamoussoukro</h3>
+                    <p class="card-description">Découvrez la basilique Notre-Dame de la Paix, le lac aux crocodiles et
+                        le palais présidentiel.</p>
+                    <div class="card-features">
+                        <span><i class="fa-solid fa-star"></i> 4.6/5</span>
+                        <span><i class="fa-solid fa-hotel"></i> 45 avis</span>
+                    </div>
+                    <a href="/reservation" class="btn btn-secondary">Réserver</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-image">
+                    <img src="/images/san-pedro.jpg" alt="San Pedro" loading="lazy">
+                    <span class="card-badge">À partir de 399€</span>
+                </div>
+                <div class="card-content">
+                    <h3>San Pedro</h3>
+                    <p class="card-description">Plages de sable blanc, parc national de Taï et découverte de la culture
+                        cacao.</p>
+                    <div class="card-features">
+                        <span><i class="fa-solid fa-star"></i> 4.7/5</span>
+                        <span><i class="fa-solid fa-hotel"></i> 62 avis</span>
+                    </div>
+                    <a href="/reservation" class="btn btn-secondary">Réserver</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- ===== SECTION NOS AGENCES ===== -->
+    <section class="about">
+        <div class="about-container">
+            <h2>Nos agences dans le monde</h2>
+            <p class="section-subtitle">Présents sur 4 continents pour vous accompagner</p>
+            <div class="about-stats">
+                <div class="stat">
+                    <span class="stat-number">🇨🇮</span>
+                    <span class="stat-label">Abidjan<br><small>Siège social</small></span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">🇫🇷</span>
+                    <span class="stat-label">Paris<br><small>France</small></span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">🇨🇦</span>
+                    <span class="stat-label">Montréal<br><small>Canada</small></span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">🇨🇳</span>
+                    <span class="stat-label">Pékin<br><small>Chine</small></span>
+                </div>
             </div>
-        
-            <div class="services-container">
-                <!-- Service Tourisme -->
-                <article class="service-card">
-                    <div class="service-icon">✈️</div>
-                    <h3>Tourisme & Découverte</h3>
-                    <p class="service-description">
-                        Découvrez les plus beaux sites touristiques avec nos guides expérimentés.
-                        Visites culturelles, circuits historiques et aventures nature.
-                    </p>
-                    <div class="service-features">
-                        <span>📍 Visites guidées</span>
-                        <span>🗺️ Circuits personnalisés</span>
-                        <span>📸 Photos souvenirs</span>
-                    </div>
-                    <a href="/tourisme" class="btn btn-secondary">En savoir plus</a>
-                </article>
-        
-                <!-- Service Événementiel -->
-                <article class="service-card">
-                    <div class="service-icon">🎉</div>
-                    <h3>Événementiel & Réceptions</h3>
-                    <p class="service-description">
-                        Organisation de mariages, anniversaires, séminaires et soirées privées.
-                        Un service clé en main pour des moments inoubliables.
-                    </p>
-                    <div class="service-features">
-                        <span>💍 Mariages</span>
-                        <span>🎂 Anniversaires</span>
-                        <span>💼 Séminaires</span>
-                    </div>
-                    <a href="/evenementiel" class="btn btn-secondary">En savoir plus</a>
-                </article>
-        
-                <!-- Service Premium (optionnel) -->
-                <article class="service-card">
-                    <div class="service-icon">⭐</div>
-                    <h3>Service Premium</h3>
-                    <p class="service-description">
-                        Pour ceux qui veulent le meilleur : accès VIP, conciergerie 24/7,
-                        expériences exclusives et hébergements de luxe.
-                    </p>
-                    <div class="service-features">
-                        <span>👑 Accès VIP</span>
-                        <span>🕐 Conciergerie 24/7</span>
-                        <span>🏨 Hébergements luxe</span>
-                    </div>
-                    <a href="/premium" class="btn btn-secondary">En savoir plus</a>
-                </article>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="/international" class="btn btn-secondary">En savoir plus sur nos agences</a>
             </div>
-        </section>
+        </div>
+    </section>
+
+    <!-- ===== SECTION DEVIS RAPIDE ===== -->
+    <section class="reservation" style="background-color: var(--bg-light);">
+        <div class="reservation-container">
+            <h2>Vous avez un projet ?</h2>
+            <p>Que ce soit pour un voyage, un circuit ou un événement, demandez un devis gratuit</p>
+            <form class="reservation-form" action="/envoyer-devis" method="post">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="service-type">Type de service</label>
+                        <select id="service-type" name="service" required>
+                            <option value="">Sélectionnez</option>
+                            <option value="Voyage">Voyage / Séjour</option>
+                            <option value="Tourisme">Tourisme / Circuit</option>
+                            <option value="Événementiel">Événementiel</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="nom-complet">Nom complet</label>
+                        <input type="text" id="nom-complet" name="nom" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email-devis">Email</label>
+                        <input type="email" id="email-devis" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telephone-devis">Téléphone</label>
+                        <input type="tel" id="telephone-devis" name="telephone" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message-devis">Votre demande</label>
+                    <textarea id="message-devis" name="message" rows="3"
+                        placeholder="Décrivez votre projet..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-large">Demander un devis gratuit</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // ===== CARROUSEL HERO =====
+        document.addEventListener('DOMContentLoaded', function () {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const dots = document.querySelectorAll('.dot');
+            const prevBtn = document.querySelector('.carousel-btn.prev');
+            const nextBtn = document.querySelector('.carousel-btn.next');
+            let currentIndex = 0;
+            let interval;
+
+            // Fonction pour changer de slide
+            function showSlide(index) {
+                if (index >= slides.length) index = 0;
+                if (index < 0) index = slides.length - 1;
+                currentIndex = index;
+
+                slides.forEach(slide => slide.classList.remove('active'));
+                slides[currentIndex].classList.add('active');
+
+                dots.forEach(dot => dot.classList.remove('active'));
+                dots[currentIndex].classList.add('active');
+            }
+
+            function nextSlide() {
+                showSlide(currentIndex + 1);
+            }
+
+            function prevSlide() {
+                showSlide(currentIndex - 1);
+            }
+
+            // Autoplay toutes les 1 seconde
+            function startAutoplay() {
+                if (interval) clearInterval(interval);
+                interval = setInterval(nextSlide, 2000); // ← 2 secondes
+            }
+
+            function stopAutoplay() {
+                if (interval) clearInterval(interval);
+            }
+
+            // Boutons
+            if (prevBtn) prevBtn.addEventListener('click', () => {
+                prevSlide();
+                stopAutoplay();
+                startAutoplay();
+            });
+
+            if (nextBtn) nextBtn.addEventListener('click', () => {
+                nextSlide();
+                stopAutoplay();
+                startAutoplay();
+            });
+
+            // Dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showSlide(index);
+                    stopAutoplay();
+                    startAutoplay();
+                });
+            });
+
+            // Pause au survol
+            const carousel = document.querySelector('.hero-carousel');
+            if (carousel) {
+                carousel.addEventListener('mouseenter', stopAutoplay);
+                carousel.addEventListener('mouseleave', startAutoplay);
+            }
+
+            startAutoplay();
+        });
+    </script>
 
     <%- include('partials/footer') %>

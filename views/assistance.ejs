@@ -1,0 +1,61 @@
+<%- include('partials/header', { title: 'Assistance - Confort Plus' ,
+    description: 'Une assistance 24/7 pour vous accompagner pendant votre voyage' }) %>
+
+    <section class="hero"
+        style="min-height: 40vh; background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/images/assistance.jpg'); background-size: cover; background-position: center;">
+        <div class="hero-content">
+            <h1>Assistance 24/7</h1>
+            <p class="hero-slogan">Nous sommes là pour vous, à chaque instant</p>
+        </div>
+    </section>
+
+    <section class="destinations">
+        <div class="section-header">
+            <h2>Nos services d'assistance</h2>
+            <p class="section-subtitle">Une équipe dédiée à votre disposition 24h/24 et 7j/7</p>
+        </div>
+
+        <div class="card-container">
+            <div class="service-card">
+                <div class="service-icon">📞</div>
+                <h3>Assistance téléphonique</h3>
+                <p>Une ligne directe accessible 24h/24 pour toute urgence ou question pendant votre voyage.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">✉️</div>
+                <h3>Support email</h3>
+                <p>Réponse sous 2 heures maximum, 7j/7, pour toutes vos demandes.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🚗</div>
+                <h3>Dépannage transport</h3>
+                <p>En cas de problème de transport, nous organisons une solution alternative immédiate.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🏥</div>
+                <h3>Assistance médicale</h3>
+                <p>Mise en relation avec des professionnels de santé et prise en charge si nécessaire.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="about-container">
+            <h2>Contacts d'urgence par pays</h2>
+            <div class="about-stats">
+                <div class="stat"><span class="stat-number">🇨🇮</span><span class="stat-label">+225 07 00 00 00
+                        00</span></div>
+                <div class="stat"><span class="stat-number">🇫🇷</span><span class="stat-label">+33 6 00 00 00 00</span>
+                </div>
+                <div class="stat"><span class="stat-number">🇨🇦</span><span class="stat-label">+1 438 000 0000</span>
+                </div>
+                <div class="stat"><span class="stat-number">🇨🇳</span><span class="stat-label">+86 10 0000 0000</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%- include('partials/footer') %>
